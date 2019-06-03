@@ -38,4 +38,6 @@ Dette er steder hvor du kan endre konfigurasjonen til et valgt node. Du kan ogs�
 kaller det event-drevne systemet sitt. (f.eks. kan du lage et signal for når en kollisjon skjer, eller man trykker på en
 knapp).
 
-![Bilde av insp](./bilder/inspector.png)
+![Bilde av inspector](./bilder/inspector.png)
+
+Velg "2D Scene" under "Create root node", rename den til "World" og fortsett til [sprites og bevegelse](./02-sprites-og-bevegelse.md).
