@@ -61,7 +61,7 @@ en ny barnenode til spillkarakteren av typen `CollisionShape2D`. I inspector
 setter man shape til "Rectangle", og sørger for at den passer veldig bra rundt
 figuren vår. Gjør tilsvarende for plattformen du har laget.
 
-Om du starter spillet på nytt nå vil du se at karakteren stopper oppå plattformen,
+Om du starter spillet på nytt nå vil du se at karakteren stopper på plattformen,
 uten at vi trengte å skrive noe kode.
 
 ## Fikse merkelig fysikk (vi faller for fort?)
