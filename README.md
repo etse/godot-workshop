@@ -18,5 +18,5 @@ grad bygge på hverandre.
 3. [Fysikk og kollisjoner](03-fysikk-og-kollisjoner.md)
 4. [Tilemaps og tilesets](04-tilemaps-og-tilesets.md)
 5. [Animasjoner](05-animasjoner.md)
-6. [Parallax bakgrunn](06-parallax-bakgrunn.md)
+6. [Kamera og parallax bakgrunn](06-parallax-bakgrunn.md)
 7. [Videre oppgaver](07-videre-oppgaver.md)

@@ -30,7 +30,7 @@ Vi starter med å bruke `KinematicBody2D`, så velg denne og gi den et navn som
 indentifiserer at dette er spilleren. Vi ønsker også at spilleren skal være synlig
 så vi må legge til en sprite som visualisering. Dette gjør vi ved å lage en node av
 typen `Sprite` som barnenode til fysikk-noden. Vi må i tillegg gi spriten en tekstur, dette
-gjør vi ved å fra ønsket bildefil over i "Texture"-feltet som man finner i inspector på
+gjør vi ved å dra ønsket bildefil over i "Texture"-feltet som man finner i inspector på
 høyre side når sprite-noden er valgt.
 
 ![Bilde av inspector med tekstur](./bilder/add-texture.png)
@@ -48,10 +48,10 @@ seg sammen med kroppen. Dette kan man skru ved å bruke knappen vist i bildet un
 For å få karakteren vår tik å bevege seg må vi til med noe kode. Vi må derfor starte
 med å koble et script til karakteren vår. Dette kan man gjøre ved å høyreklikke på
 fysikk-kroppen til spillkarakteren og velge `Attach script`. Når filen er opprettet
-vil den komme med en tom `_ready` funcksjon. Denne funksjonen kan sammenlignes med
+vil den komme med en tom `_ready`-funksjon. Denne funksjonen kan sammenlignes med
 `componentDidMount` om man er vant med å skrive react-kode. Siden vi ønker å skrive
 kode som blir kjørt som en del av main-loopen i spillet vårt er det ikke denne vi skal
-bruke. I stede ønsker vi å lage en ny funksjon `func _process(delta):`.
+bruke. I stede ønsker vi å lage en ny funksjon `func _process(delta)`.
 Denne funksjonen blir kallt ved hver fysikk-oppdatering, og delta er tiden siden forrige
 gang denne funksjonen ble kallt.
 
