@@ -14,3 +14,9 @@ Selve workshopen er delt opp i flere steg - men det er tenkt at man går gjennom
 grad bygge på hverandre.
 
 1. [Oppsett og Kom i gang](01-kom-i-gang.md)
+2. [Sprites og bevegelse](02-sprites-og-bevegelse.md)
+3. [Fysikk og kollisjoner](03-fysikk-og-kollisjoner.md)
+4. [Tilemaps og tilesets](04-tilemaps-og-tilesets.md)
+5. [Animasjoner](05-animasjoner.md)
+6. [Parallax bakgrunn](06-parallax-bakgrunn.md)
+7. [Videre oppgaver](07-videre-oppgaver.md)

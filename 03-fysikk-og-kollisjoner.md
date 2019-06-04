@@ -89,7 +89,7 @@ ser man at den oppdateres når vi kaller `move_and_slide`.
 Den andre parameteren til move_and_slide er en vetor som beskriver ha som er opp.
 Denne brukes av funksjonen for å bestemme hva som er gulv og tak. Når vi ikke sender
 inn noe blir alt antatt å være vegger. Vi må derfor endre til
-`motion = move_and_slide(motion, Vector2(0, 1))` for at denne funksjonen skal fungere.
+`motion = move_and_slide(motion, Vector2(0, -1))` for at denne funksjonen skal fungere.
 
 Forsøk å implementere en enkel variant av hopping, og finn en høyde på hoppet du
 synes passer bra i spillet ditt. Et tips kan enten være å bruke knappen "ui_up"
