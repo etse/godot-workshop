@@ -1,0 +1,1 @@
+# Parallax backgrunn og kamera

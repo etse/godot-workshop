@@ -73,8 +73,8 @@ til flere knapper, eller endre konfigureringen kan dette gjøres under Input Map
 project settings.
 
 Vi ønsker nå å flytte selve karakteren vår. For dette finnes det allerde en god del
-metoder på [KinematicBody2D](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody.html)
-som vi kan bruke. Spesielt metoden [move_and_slide](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody.html#class-kinematicbody-method-move-and-slide)
+metoder på [KinematicBody2D](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody2d.html)
+som vi kan bruke. Spesielt metoden [move_and_slide](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody2d.html#class-kinematicbody2d-method-move-and-slide)
 vil være nyttig for oss. Denne metoden tar inn en vektor2 for retningen man ønsker å flytte.
 Vi kan derfor flytte karakteren vår ved å gjøre noe tilsvarende `move_and_slide(Vector2(200, 0))`
 
