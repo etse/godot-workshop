@@ -56,6 +56,4 @@ position = Vector2( 2, 16 )
 current = true
 limit_left = 0
 limit_top = 0
-smoothing_enabled = true
 smoothing_speed = 10.0
-

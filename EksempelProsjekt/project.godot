@@ -21,9 +21,13 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
 window/size/test_width=1280
 window/size/test_height=720
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"

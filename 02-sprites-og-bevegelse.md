@@ -38,4 +38,45 @@ høyre side når sprite-noden er valgt.
 Vi ønsker å flytte karakteren vår litt inn på spillbrettet. En viktig ting å være klar
 over er at posisjonen til barnenoder, er relativt til foreldrenoden. Dette betyr at det
 er fysikk-kroppen til spilleren vi vil flytte, og ikke selve spriten, da den vil flytte
-seg sammen med kroppen. Ved å huke av for at man ikke skal kunne velge barnenodene 
+seg sammen med kroppen. Dette kan man skru ved å bruke knappen vist i bildet under.
+
+![Bilde av knappen for å skru av mulighet for å velge barnenoder](./bilder/not-select-child.png)
+
+
+### Få karakteren til å bevege seg
+
+For å få karakteren vår tik å bevege seg må vi til med noe kode. Vi må derfor starte
+med å koble et script til karakteren vår. Dette kan man gjøre ved å høyreklikke på
+fysikk-kroppen til spillkarakteren og velge `Attach script`. Når filen er opprettet
+vil den komme med en tom `_ready` funcksjon. Denne funksjonen kan sammenlignes med
+`componentDidMount` om man er vant med å skrive react-kode. Siden vi ønker å skrive
+kode som blir kjørt som en del av main-loopen i spillet vårt er det ikke denne vi skal
+bruke. I stede ønsker vi å lage en ny funksjon `func _process(delta):`.
+Denne funksjonen blir kallt ved hver fysikk-oppdatering, og delta er tiden siden forrige
+gang denne funksjonen ble kallt.
+
+I denne funksjonen ønsker vi å sjekke om du trykker til høyre eller venstre - og i så fall
+bevege deg den retningen du ønsker. For å hjelpe med dette har vi et `Input`-objekt som
+har metoden [Input.is_action_pressed(inputName: string)](https://docs.godotengine.org/en/3.1/tutorials/inputs/inputevent.html#actions).
+
+Vi ønsker å gjøre noe tilsvarende: 
+```
+func _process(delta):
+    if Input.is_action_pressed("ui_right"):
+        # Move right
+```
+
+Ui_right er her navnet på knappen vi ønsker å sjekke at er trykket. Dette kommer av at
+GoDot kommer ferdig med egen key-mapper. Ui_right er en av default-knappene som er satt
+opp, og er pil-høyre eller numpad-høyre om man ikke har endret noe. Om man ønsker å legge
+til flere knapper, eller endre konfigureringen kan dette gjøres under Input Mapping i
+project settings.
+
+Vi ønsker nå å flytte selve karakteren vår. For dette finnes det allerde en god del
+metoder på [KinematicBody2D](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody.html)
+som vi kan bruke. Spesielt metoden [move_and_slide](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody.html#class-kinematicbody-method-move-and-slide)
+vil være nyttig for oss. Denne metoden tar inn en vektor2 for retningen man ønsker å flytte.
+Vi kan derfor flytte karakteren vår ved å gjøre noe tilsvarende `move_and_slide(Vector2(200, 0))`
+
+Implementer slik at karakteren kan flyttes til både høyre og venstre, og gå så
+videre til [fysikk og kollisjoner](./03-fysikk-og-kollisjoner.md).
