@@ -45,15 +45,15 @@ seg sammen med kroppen. Dette kan man skru ved å bruke knappen vist i bildet un
 
 ### Få karakteren til å bevege seg
 
-For å få karakteren vår tik å bevege seg må vi til med noe kode. Vi må derfor starte
+For å få karakteren vår til å bevege seg må vi til med noe kode. Vi må derfor starte
 med å koble et script til karakteren vår. Dette kan man gjøre ved å høyreklikke på
 fysikk-kroppen til spillkarakteren og velge `Attach script`. Når filen er opprettet
 vil den komme med en tom `_ready`-funksjon. Denne funksjonen kan sammenlignes med
 `componentDidMount` om man er vant med å skrive react-kode. Siden vi ønker å skrive
 kode som blir kjørt som en del av main-loopen i spillet vårt er det ikke denne vi skal
-bruke. I stede ønsker vi å lage en ny funksjon `func _process(delta)`.
-Denne funksjonen blir kallt ved hver fysikk-oppdatering, og delta er tiden siden forrige
-gang denne funksjonen ble kallt.
+bruke. I stedet ønsker vi å lage en ny funksjon `func _process(delta)`.
+Denne funksjonen blir kalt ved hver fysikk-oppdatering, og delta er tiden siden forrige
+gang denne funksjonen ble kalt.
 
 I denne funksjonen ønsker vi å sjekke om du trykker til høyre eller venstre - og i så fall
 bevege deg den retningen du ønsker. For å hjelpe med dette har vi et `Input`-objekt som

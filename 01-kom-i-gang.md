@@ -28,7 +28,7 @@ en sprite-node for spilleren. Spilleren har da en undernode som implementerer 2D
 som beskriver kollisjonsboksen. Disse 3 tingene til sammen gjør at man har en *Sprite* som kan beveget på, som
 bruker enkel fysikk og kan kollidere med andre noder.
 
-Det over ble veldig overordnet, så ikke vær redd om det var litt forvirrende. Vi blir å se met detaljert på alt utover
+Det over ble veldig overordnet, så ikke vær redd om det var litt forvirrende. Vi blir å se mer detaljert på alt utover
 i workshopen.
 
 ![Bilde av et eksempel-oppsett av noder](./bilder/nodes.png)
