@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx2t8bneqj1kk"]
+
+[ext_resource type="Texture2D" uid="uid://dj303wovxkco6" path="res://assets/Player/Idle0.png" id="1_4hgxy"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(47, 36)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_4hgxy")

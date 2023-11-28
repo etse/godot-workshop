@@ -17,19 +17,19 @@ sprite som barnenode, som styrer visualiseringen - og gjerne en collision-box fo
 La oss starte med å opprette noden for karakteren. Dette kan man gjøre enten ved å klikke
 på plusstegnet i scene-manager, eller ved å høyreklikke på "World"-noden og velge
 `Add child-node`. Du vil da få opp en oversikt over alle de ulike nodene man har i GoDot.
-Vi ønsker en 2D-fysikk-kropp. Ved å søke opp `PhysicsBody2D` vil alt utenom det vi er interessert
-i være filtrert vekk.
+Vi ønsker en 2D-fysikk-kropp.
 
-For 2D-fysikk er det 3 standard-kropper man kan velge mellom. `KinematicBody2D` som er et
+For 2D-fysikk er det 3 standard-kropper man kan velge mellom. `CharacterBody2D` som er et
 enkelt objekt som kan beveges og har en del ferdige implementasjoner for fysikk allerede
 implementert. `RigidBody2D` som er kontrollert av fysikk-motoren i spillet. Dette betyr
 at den vil være påvirket av ting som gravitasjon. Det siste er `StaticBody2D`, som bare
-er et statisk objekt. Mye brukt til f.eks. å lage spillbrettet.
+er et statisk objekt. Mye brukt til f.eks. å lage spillbrettet. For å finne en bestemt node
+kan man enten søke den opp om man kjenner til navnet eller lete litt i treet av ulike noder.
 
-Vi starter med å bruke `KinematicBody2D`, så velg denne og gi den et navn som
+Vi starter med å bruke `CharacterBody2D`, så velg denne og gi den et navn som
 indentifiserer at dette er spilleren. Vi ønsker også at spilleren skal være synlig
 så vi må legge til en sprite som visualisering. Dette gjør vi ved å lage en node av
-typen `Sprite` som barnenode til fysikk-noden. Vi må i tillegg gi spriten en tekstur, dette
+typen `Sprite2D` som barnenode til fysikk-noden. Vi må i tillegg gi spriten en tekstur, dette
 gjør vi ved å dra ønsket bildefil over i "Texture"-feltet som man finner i inspector på
 høyre side når sprite-noden er valgt.
 
