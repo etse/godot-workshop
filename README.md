@@ -15,8 +15,8 @@ grad bygge på hverandre.
 
 1. [Oppsett og Kom i gang](01-kom-i-gang.md)
 2. [Sprites og bevegelse](02-sprites-og-bevegelse.md)
-3. [Fysikk og kollisjoner](03-fysikk-og-kollisjoner.md)
-4. [Tilemaps og tilesets](04-tilemaps-og-tilesets.md)
-5. [Animasjoner](05-animasjoner.md)
-6. [Kamera og parallax bakgrunn](06-parallax-bakgrunn.md)
-7. [Videre oppgaver](07-videre-oppgaver.md)
+3. [Tilemaps og tilesets](03-tilemaps-og-tilesets.md)
+4. [Animasjoner](04-animasjoner.md)
+5. [Kamera og parallax bakgrunn](05-parallax-bakgrunn.md)
+6. [Collectables](05-collectables.md)
+7. [Flere brett](05-flere-brett.md)
