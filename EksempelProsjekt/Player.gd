@@ -1,46 +1,46 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-const UP = Vector2(0, -1);
-const JUMP = -500
-const SPEED = 175
-const GRAVITY = 20
 
-var motion = Vector2()
+const SPEED = 300.0
+const JUMP_VELOCITY = -500.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
 
-	motion.y += GRAVITY
-	
-	if motion.x > 0:
-		$Sprite.flip_h = false
-	if motion.x < 0:
-		$Sprite.flip_h = true
-		
-	
-	if Input.is_action_pressed("ui_right"):
-		motion.x = SPEED
-	elif Input.is_action_pressed("ui_left"):
-		motion.x = -SPEED
+	# Handle Jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED
 	else:
-		motion.x = 0
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	animateSprite()
+	move_and_slide()
+	
+func animateSprite():
+	if velocity.x > 0:
+		$Sprite2D.flip_h = false
+	if velocity.x < 0:
+		$Sprite2D.flip_h = true
 		
 	if is_on_floor():
-		if Input.is_action_just_pressed("ui_up"):
-			motion.y = JUMP
-			
-		elif motion.x != 0:
-			$Sprite.play("run")
+		if absf(velocity.x) > 0.1:
+			$Sprite2D.play("run")
 		else:
-			$Sprite.play("idle")
+			$Sprite2D.play("idle")
 	else:
-		if motion.y < 0:
-			$Sprite.play("jump")
+		if velocity.y < 0:
+			$Sprite2D.play("jump")
 		else:
-			$Sprite.play("fall")
-		
-	motion = move_and_slide(motion, UP)
+			$Sprite2D.play("fall")

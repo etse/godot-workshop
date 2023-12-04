@@ -17,19 +17,19 @@ sprite som barnenode, som styrer visualiseringen - og gjerne en collision-box fo
 La oss starte med å opprette noden for karakteren. Dette kan man gjøre enten ved å klikke
 på plusstegnet i scene-manager, eller ved å høyreklikke på "World"-noden og velge
 `Add child-node`. Du vil da få opp en oversikt over alle de ulike nodene man har i GoDot.
-Vi ønsker en 2D-fysikk-kropp. Ved å søke opp `PhysicsBody2D` vil alt utenom det vi er interessert
-i være filtrert vekk.
+Vi ønsker en 2D-fysikk-kropp.
 
-For 2D-fysikk er det 3 standard-kropper man kan velge mellom. `KinematicBody2D` som er et
+For 2D-fysikk er det 3 standard-kropper man kan velge mellom. `CharacterBody2D` som er et
 enkelt objekt som kan beveges og har en del ferdige implementasjoner for fysikk allerede
 implementert. `RigidBody2D` som er kontrollert av fysikk-motoren i spillet. Dette betyr
 at den vil være påvirket av ting som gravitasjon. Det siste er `StaticBody2D`, som bare
-er et statisk objekt. Mye brukt til f.eks. å lage spillbrettet.
+er et statisk objekt. Mye brukt til f.eks. å lage spillbrettet. For å finne en bestemt node
+kan man enten søke den opp om man kjenner til navnet eller lete litt i treet av ulike noder.
 
-Vi starter med å bruke `KinematicBody2D`, så velg denne og gi den et navn som
+Vi starter med å bruke `CharacterBody2D`, så velg denne og gi den et navn som
 indentifiserer at dette er spilleren. Vi ønsker også at spilleren skal være synlig
 så vi må legge til en sprite som visualisering. Dette gjør vi ved å lage en node av
-typen `Sprite` som barnenode til fysikk-noden. Vi må i tillegg gi spriten en tekstur, dette
+typen `Sprite2D` som barnenode til fysikk-noden. Vi må i tillegg gi spriten en tekstur, dette
 gjør vi ved å dra ønsket bildefil over i "Texture"-feltet som man finner i inspector på
 høyre side når sprite-noden er valgt.
 
@@ -47,36 +47,39 @@ seg sammen med kroppen. Dette kan man skru ved å bruke knappen vist i bildet un
 
 For å få karakteren vår til å bevege seg må vi til med noe kode. Vi må derfor starte
 med å koble et script til karakteren vår. Dette kan man gjøre ved å høyreklikke på
-fysikk-kroppen til spillkarakteren og velge `Attach script`. Når filen er opprettet
-vil den komme med en tom `_ready`-funksjon. Denne funksjonen kan sammenlignes med
-`componentDidMount` om man er vant med å skrive react-kode. Siden vi ønker å skrive
-kode som blir kjørt som en del av main-loopen i spillet vårt er det ikke denne vi skal
-bruke. I stedet ønsker vi å lage en ny funksjon `func _process(delta)`.
-Denne funksjonen blir kalt ved hver fysikk-oppdatering, og delta er tiden siden forrige
-gang denne funksjonen ble kalt.
+fysikk-kroppen til spillkarakteren og velge `Attach script`.
 
-I denne funksjonen ønsker vi å sjekke om du trykker til høyre eller venstre - og i så fall
-bevege deg den retningen du ønsker. For å hjelpe med dette har vi et `Input`-objekt som
-har metoden [Input.is_action_pressed(inputName: string)](https://docs.godotengine.org/en/3.1/tutorials/inputs/inputevent.html#actions).
+I vinduet du får opp kan du velge templaten: `CharacterBody2D: Basic Movement`. Når
+du oppretter filen vil du da få opp en basic implementasjon av movement for en karakter.
 
-Vi ønsker å gjøre noe tilsvarende: 
-```
-func _process(delta):
-    if Input.is_action_pressed("ui_right"):
-        # Move right
-```
+Se gjerne litt over koden og se om du forstår hva som skjer. Start gjerne opp spillet
+og du vil se at karakteren faller nedover skjermen og kan styres til venstre og høyre.
 
-Ui_right er her navnet på knappen vi ønsker å sjekke at er trykket. Dette kommer av at
-GoDot kommer ferdig med egen key-mapper. Ui_right er en av default-knappene som er satt
-opp, og er pil-høyre eller numpad-høyre om man ikke har endret noe. Om man ønsker å legge
-til flere knapper, eller endre konfigureringen kan dette gjøres under Input Mapping i
-project settings.
 
-Vi ønsker nå å flytte selve karakteren vår. For dette finnes det allerde en god del
-metoder på [KinematicBody2D](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody2d.html)
-som vi kan bruke. Spesielt metoden [move_and_slide](https://docs.godotengine.org/en/3.1/classes/class_kinematicbody2d.html#class-kinematicbody2d-method-move-and-slide)
-vil være nyttig for oss. Denne metoden tar inn en vektor2 for retningen man ønsker å flytte.
-Vi kan derfor flytte karakteren vår ved å gjøre noe tilsvarende `move_and_slide(Vector2(200, 0))`
+## Lage en plattform
 
-Implementer slik at karakteren kan flyttes til både høyre og venstre, og gå så
-videre til [fysikk og kollisjoner](./03-fysikk-og-kollisjoner.md).
+Å lage en plattform er i stor grad det samme som å lage selve spillkarakteren
+den eneste store forskjellen er at vi nå ønsker å bruke `StaticBody2D` i stede 
+for `CharacterBody2D` siden plattformene skal være statiske. Lag derfor
+en enkel `StaticBody2D` med en sprite som du legger Godot-logoen som tekstur,
+og plasser den litt under spillkarakteren. Husk at vi ønsker å flytte
+fysikk-kroppen og ikke spriten.
+
+For å lett kunne plassere ting "pixel-perfect" anbefaler jeg å skru på grid-snap. 
+(Knappen med ikonet som ser ut som en magnet forran et rutenett). Sett grid-snap
+til størrelsen på plattformene (knappen med 3 prikker -> configure snap).
+
+
+## Implementere kollisjon
+
+Å legge til kollisjon er som alt annet i GoDot, en node. Start med å legge til
+en ny barnenode til spillkarakteren av typen `CollisionShape2D`. I inspector
+setter man shape til "Rectangle", og sørger for at den passer veldig bra rundt
+figuren vår. Gjør tilsvarende for plattformen du har laget.
+
+Om du starter spillet på nytt nå vil du se at karakteren stopper på plattformen,
+uten at vi trengte å skrive noe kode.
+
+Dette er en litt tungvinn måte å lage brett på, så for å gjøre dette enklere
+skal vi forsøke å lage et brett via [tilemaps og tilesets](./03-tilemaps-og-tilesets.md).
+

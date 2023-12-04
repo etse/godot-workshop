@@ -1,14 +1,12 @@
 ## Komme i gang
 
 Det første vi skal gjøre er å laste ned Godot og sette opp prosjektet vårt. Godot kan lastes ned gjennom
-[deres nettsider](https://godotengine.org/download). Du vil her få opp 2 alternativer *Standard version* og
-*Mono version*. Forskjellen mellom disse er kun at Mono-versjonen støtter C#. Men for å støtte C# må man ha mono
-som krever *MSBuild*. I denne workshopen kommer vi til å bruke GDScript - som et et programmeringsspråk som ligner
-veldig på python. Vi trenger derfor ikke *Mono version*.
+[deres nettsider](https://godotengine.org/download). Du vil her få opp 2 alternativer *Godot Engine* og
+*Godot Engeine - .NET*. Forskjellen mellom disse er kun at den ene legger opp til å kode i GDScript og den andre i C#.
+I denne workshopen kommer vi til å bruke GDScript - som et et programmeringsspråk som ligner veldig på python.
 
 Når du starter opp Godot vil du bli møtt av *Project manager*. Vi ønsker her å starte et nytt prosjekt. Vi kan da velge
-mellom *OpenGL ES 3.0* og *OpenGL ES 2.0*. Det har ikke så mye å si hvilken man velger - eneste som er greit å være klar
-over er at ES 2.0 er betydelig bedre støttet om man ønsker at spillet skal kjøre i nettleseren.
+mellom *Forward+*, *Mobile* og *Compatability*. Her går vi bare for *Forward+*, som skal være standardvalget.
 
 Når du har laget prosjektet vil du bli møtt av en editor med en 3D-visning i midten. Siden vi i førsteomgang skal
 lage et 2D spill ønsker vi å bruke 2D-visningen. Trykk på knappen "2D" som du finner øverst i midten på siden for
