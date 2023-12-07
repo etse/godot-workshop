@@ -12,5 +12,10 @@ config_version=5
 
 config/name="EksempelProsjekt"
 run/main_scene="res://world.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
