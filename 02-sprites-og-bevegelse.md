@@ -3,7 +3,8 @@
 Vi har nå satt opp prosjektet vårt. Og det første vi vil gjøre er å legge til
 spillkarakteren, og lage et brett den kan bevege seg på. Vi kommer til å bruke noen
 ferdige bilder for dette, disse ligger i `assets`-mappen. Så det første vi gjør er å
-kopiere denne mappen inn i prosjektet vårt.
+kopiere denne mappen inn i prosjektet vårt. 
+Dette kan du gjøre med å dra `asset` in i `FileSystem`-området til Godot.
 
 ## Lage spillkarakteren
 
