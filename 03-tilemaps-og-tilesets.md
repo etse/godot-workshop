@@ -27,7 +27,7 @@ ingen mellomrom mellom tiles.
 
 Vi må så sørge for at tilsene våre faktisk har kollisjon, ellers vil figuren bare falle
 rett gjennom de. For dette må man legge til noe som heter et physics-layer. Dette finner
-du i inspector på høyre side under `TileMap -> TileSet -> Physics Layers` (klikk på `TilSet` hvis du ikke ser valget for Physics Layers). 
+du i inspector på høyre side under `TileMap -> TileSet -> Physics Layers` (klikk på `TileSet` hvis du ikke ser valget for Physics Layers). 
 
 ![Bilde av inspector for å legge til fysikk](./bilder/tilemap-physics-layer.png)
 
