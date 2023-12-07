@@ -28,11 +28,15 @@ er et statisk objekt. Mye brukt til f.eks. å lage spillbrettet. For å finne en
 kan man enten søke den opp om man kjenner til navnet eller lete litt i treet av ulike noder.
 
 Vi starter med å bruke `CharacterBody2D`, så velg denne og gi den et navn som
-indentifiserer at dette er spilleren. Vi ønsker også at spilleren skal være synlig
+indentifiserer at dette er spilleren. Det vil dukke opp en warning om at vi ikke har en
+collision-shape og at denne noden ikke kan kollidere med andre noder.
+Dette kommer vi til å legge til senere i workshoppen, så ikke tenk på warningen for nå.
+
+Vi ønsker også at spilleren skal være synlig
 så vi må legge til en sprite som visualisering. Dette gjør vi ved å lage en node av
 typen `Sprite2D` som barnenode til fysikk-noden. Vi må i tillegg gi spriten en tekstur, dette
 gjør vi ved å dra ønsket bildefil over i "Texture"-feltet som man finner i inspector på
-høyre side når sprite-noden er valgt.
+høyre side når sprite-noden er valgt. 
 
 ![Bilde av inspector med tekstur](./bilder/add-texture.png)
 
