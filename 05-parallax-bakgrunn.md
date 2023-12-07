@@ -37,4 +37,4 @@ Man kan justere hvor fort bakgrunnen skal bevege seg ved å endre på motion->sc
 inspector for parallax layer. Sett denne til et lavt tall, f.eks. noe mallom 0.1 og 0.5.
 Prøv deg gjerne frem med ulike verdier, til du finner noe du er fornøyd med.
 
-Vi skal så legge til [noen collectables](05-collectables.md).
+Vi skal så legge til [noen collectables](06-collectables.md).
