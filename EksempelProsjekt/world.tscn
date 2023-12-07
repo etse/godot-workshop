@@ -26,7 +26,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"fall",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -45,7 +45,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -451,7 +451,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_8nt2m")
-animation = &"idle"
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 visible = false
@@ -471,9 +471,9 @@ layer_0/tile_data = PackedInt32Array(786437, 3, 2, 786438, 65539, 2, 786439, 655
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(2560, 2560)
+motion_mirroring = Vector2(3840, 3840)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(-138, 91)
-scale = Vector2(4, 4)
+scale = Vector2(6, 6)
 texture = ExtResource("14_jrmpa")

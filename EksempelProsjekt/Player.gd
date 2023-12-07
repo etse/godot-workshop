@@ -40,7 +40,7 @@ func animateSprite():
 		else:
 			$Sprite2D.play("idle")
 	else:
-		if velocity.y < 0:
+		if velocity.y < 0 and $Sprite2D.animation != "jump":
 			$Sprite2D.play("jump")
-		else:
+		elif velocity.y > 0 and $Sprite2D.animation != "fall":
 			$Sprite2D.play("fall")

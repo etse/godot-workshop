@@ -41,7 +41,7 @@ Det blir litt tungvindt å gjøre dette for hver enkel tile. Så for å forenkle
 nede shift og markere flere tils samtidig som skal ha samme collision boks og legge den til
 for alle på en gang.
 
-![Bilde av å legge til collision-boks](./bilder/tilset-edit-ground.png)
+![Bilde av å legge til collision-boks](./bilder/tileset-edit-ground.png)
 
 
 Når du er ferdig, dobbeltsjekk at "Cell-size" er satt til 16x16 i inspector

@@ -18,5 +18,6 @@ grad bygge på hverandre.
 3. [Tilemaps og tilesets](03-tilemaps-og-tilesets.md)
 4. [Animasjoner](04-animasjoner.md)
 5. [Kamera og parallax bakgrunn](05-parallax-bakgrunn.md)
-6. [Collectables](05-collectables.md)
-7. [Flere brett](05-flere-brett.md)
+6. [Collectables](06-collectables.md)
+7. [Flere brett](07-flere-brett.md)
+
