@@ -13,7 +13,9 @@ vil være en node i godot. Men en typisk sprite i godot består også gjerne av 
 deler. En spillkarakter består gjerne av 1 fysikk-kropp som er noden for karakteren,
 og styrer alt av bevegelse og annen fysikk. I tillegg har man gjerne en form for
 sprite som barnenode, som styrer visualiseringen - og gjerne en collision-box for
-å fange opp kollisjoner. 
+å fange opp kollisjoner.
+
+![Bilde av nodetreet](./bilder/karakter-nodetre.png)
 
 La oss starte med å opprette noden for karakteren. Dette kan man gjøre enten ved å klikke
 på plusstegnet i scene-manager, eller ved å høyreklikke på "World"-noden og velge
