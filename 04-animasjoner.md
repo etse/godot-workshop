@@ -11,6 +11,14 @@ spriten vår når vi beveger oss i den retningen. Dette kan gjøres ved å
 sette feltet `flip_h` på spriten til true. Men for å få til dette må vi klare
 å akksessere spriten vår fra koden. 
 
+
+For å legge til et `script` på en node, høreklikker man den noden man ønsker å
+legge til et script på å velger `Attach Script`. Godot kommer også med 
+templates for en del node-typer. `CharacterBody2D` har en template som inneholder
+enkel bevegelse. Velg denne.
+
+![Bilde av script attach](./bilder/attach-script.png)
+
 Spriten vår er en barnenode, og for å akksessere barnenoder har GDScript
 spesialtegnet `$`. Hvis man f.eks. ønsker å akksessere en barnenode med navnet
 `Sprite2D` kan man da skrive `$Sprite2D`. Med andre ord kan vi flippe spriten ved
