@@ -53,7 +53,7 @@ const levels = [
 ]
 
 func _ready():
-	var level = levels[currentLevel].instantiate()
+    var level = levels[currentLevel].instantiate()
     add_child(level)
 ```
 
