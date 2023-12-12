@@ -11,7 +11,8 @@ Selve repoet inneholder ikke noe kode, og tanken er at man starter helt fra scra
 `assets` - og det vil komme frem i oppgavene når du skal bruke dem.
 
 Selve workshopen er delt opp i flere steg - men det er tenkt at man går gjennom alle stegene. Og de vil i stor
-grad bygge på hverandre.
+grad bygge på hverandre. Det ligger også en mappe med navnet `EksempelProsjekt` i repoet, dette er et enkelt løsningsforslag
+om man ønsker litt inspirasjon eller sitter litt fast kan man ta en titt på denne.
 
 1. [Oppsett og Kom i gang](01-kom-i-gang.md)
 2. [Sprites og bevegelse](02-sprites-og-bevegelse.md)
