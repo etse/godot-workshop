@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://fcpkbkyrd81j"]
+
+[ext_resource type="Script" path="res://components/HUD.gd" id="1_y54kx"]
+
+[sub_resource type="SystemFont" id="SystemFont_ekwbd"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_45kgd"]
+font = SubResource("SystemFont_ekwbd")
+font_size = 24
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_y54kx")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 928.0
+offset_top = 608.0
+offset_right = 1136.0
+offset_bottom = 642.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_45kgd")
+horizontal_alignment = 2

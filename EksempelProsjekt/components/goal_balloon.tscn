@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bejs4mca2jul8"]
+
+[ext_resource type="Script" path="res://components/GoalBalloon.gd" id="1_2juy6"]
+[ext_resource type="Texture2D" uid="uid://bmo3fei4ntuy6" path="res://assets/airballoon.png" id="2_lxuxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brusq"]
+size = Vector2(112, 56)
+
+[node name="GoalBalloon" type="Area2D"]
+position = Vector2(1360, 624)
+script = ExtResource("1_2juy6")
+next_level = "res://world2.tscn"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_lxuxx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 84)
+shape = SubResource("RectangleShape2D_brusq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,8 @@
 # Collectables
 
 Det neste vi skal gjøre er å legge inn noen mynter som vi kan samle opp og som gir
-oss poeng etterhvert som vi samler disse opp. I assets-mappen finner man `gold_coin_sprite_sheet.png`, som en en spritesheet som kan brukes til å animere en gullmynt.
+oss poeng etterhvert som vi samler disse opp. I assets-mappen finner man `gold_coin_sprite_sheet.png`, 
+som en en spritesheet som kan brukes til å animere en gullmynt.
 
 Myntene blir på mange måter veldig like som spillkarakteren. De skal ha en animert sprite og en
 collision-boks. Men forskjellen er at de ikke skal påvirkes av fysikk og i stede for at figuren
@@ -60,7 +61,8 @@ som fjerner en node fra spillet.
 
 Vi ønsker nå å sørge for å sende et signal til spilleren om at mynten er blitt plukket opp og øke
 antall poeng spilleren har. For å få til dette trenger vi noe som heter et 
-[Heads up display](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/06.heads_up_display.html) hvor vi kan vise ting til brukeren som ikke er en del av selve "verden".
+[Heads up display](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/06.heads_up_display.html) 
+hvor vi kan vise ting til brukeren som ikke er en del av selve "verden".
 For å lage dette lager vi først en ny node av typen `CanvasLayer` som et ett eget lag som tegnes
 for seg selv. Kall denne f.eks. "HUD" eller tilsvarende. På denne ønsker vi å legge til en label
 som skal vise scoren vår. Det kan også være lurt å legge til en ny "LabelSettings" på denne labelen
@@ -80,7 +82,8 @@ func add_score(points: int):
 	score += points
 ```
 
-Siden vi kalte denne Singletonen for `Score` kan vi nå akksessere disse via `Score.add_score` og `Score.score`. Vi trenger nå å gå tilbake til scriptet til mynten vår og oppdatere den så den
+Siden vi kalte denne Singletonen for `Score` kan vi nå akksessere disse via `Score.add_score` og `Score.score`. 
+Vi trenger nå å gå tilbake til scriptet til mynten vår og oppdatere den så den
 øker scoren vår når mynten blir plukket opp. I tillegg må vi gjøre slik at HUDen vår oppdaterer
 teksten i labelen til å stemme med vår nåværende poengsum. Til dette kan vi f.eks. bruke `_process`
 funksjonen som blir kalt hver frame. Vi kan f.eks. legge til en kodelinje der som oppdaterer teksten

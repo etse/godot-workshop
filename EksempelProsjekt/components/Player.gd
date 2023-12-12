@@ -36,6 +36,7 @@ func animateSprite():
 	if is_on_floor():
 		if absf(velocity.x) > 0.1:
 			$Sprite2D.play("run")
+			$Sprite2D.play
 		else:
 			$Sprite2D.play("idle")
 	else:
