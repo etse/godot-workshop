@@ -1,6 +1,8 @@
 extends Area2D
 
-@export_file var next_level: String
+signal level_completed
 
 func _on_body_entered(body):
-	get_tree().change_scene_to_file(next_level)
+	$CollisionShape2D.queue_free()
+	level_completed.emit()
+	

@@ -443,4 +443,4 @@ position = Vector2(656, 96)
 position = Vector2(1120, 144)
 
 [node name="GoalBalloon" parent="." instance=ExtResource("6_bwqf3")]
-next_level = "res://world.tscn"
+process_mode = 1

@@ -419,7 +419,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_p4ncv")
 
 [node name="World" type="Node2D"]
-process_mode = 1
 
 [node name="HUD" parent="." instance=ExtResource("1_3ia4r")]
 
