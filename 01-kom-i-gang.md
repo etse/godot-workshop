@@ -20,7 +20,7 @@ har gjerne noen properties som kan konfigureres. I tillegg har den gjerne barnen
 en bestemt node. På mange måter en en node et objekt i objekt-orientert programmering. Og typen node vil da være hvilken
 klasse den er en instans av.
 
-*Root-node* kalles en *Scene*, og skal være en enkeltstående enhet. I mange tilfeller er den også gjenbrukbar. Under en
+*Root-node* kalles en *Scene*, og skal være en enkeltstående enhet. Et spill har typisk mange scener som er gjennbrukbare. Under en
 scene kan man legge flere noder som tilhører scenen. I eksempelet under har det blitt laget en node for bakgrunnen og
 en sprite-node for spilleren. Spilleren har da en undernode som implementerer 2D-fysikk - som igjen har en undernode
 som beskriver kollisjonsboksen. Disse 3 tingene til sammen gjør at man har en *Sprite* som kan beveget på, som
