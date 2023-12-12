@@ -5,7 +5,7 @@ gjerne skal gjenbrukes så vi ønsker å gjøre disse til scenes som kan importe
 stede for å kopiere de. Som med annen kode gjør dette det lettere å forvalte spillet, siden man
 kun trenger å endre 1 plass om man ønsker å endre noe.
 
-Vi kan start med å gjøre "head up display" og spillerkarakteren til egne scenes som kan gjenbrukes.
+Vi kan start med å gjøre "heads up display" og spillerkarakteren til egne scenes som kan gjenbrukes.
 (høyreklikk og velg "Save branch as scene")
 
 Det neste vi skal gjøre er å lage en ny 2D-scene for det neste brettet, og gi den et beskrivende navn.
@@ -22,7 +22,7 @@ utfordrende for spilleren.
 
 Det neste vi må gjøre er å legge til en "mål" som spilleren skal nå for å komme til neste brett. Du kan f.eks.
 bruke luftballongen som ligger i assets-mappen og gjøre målet til å være å komme til luftballongen, tegne noe eget
-eller finne noe som passer ditt spill. Husk at målet må ha en collision-box og at vi ønsker å bruke samme signal
+eller finne noe som passer ditt spill. Husk at målet må ha en collision-box og at vi ønsker å bruke samme type signal
 som vi bruker for å plukke opp mynter for å få med oss at spilleret når målet bare at nå ønsker vi å bruke det
 til å sørge for at vi går til neste brett.
 
@@ -34,17 +34,17 @@ man ser at man får et tekstfelt hvor man kan skrive inn hvilken level den skal 
 bruke `@export_file` som lar deg velge en fil.
 
 
-## Main scene som styrer hvilket brett spilles
+## Main scene som styrer hvilket brett
 
 Når man etterhvert får mange brett, og kanskje legger til flere ulike sener for ting som ulike menyen og "game over"
-kan dette for bli uoversiktlig. Et vanlig pattern er derfor å i stede for å la brettene selv bytte til neste sene
+kan dette for bli uoversiktlig. Et vanlig pattern er derfor å i stede for å la brettene selv bytte til neste scene
 heller la spillet ha en egen "main-scene" som styrer hvilkene scene som vises og bytte mellom disse basert på
 hva som skjer og signaler som sendes. 
 
 Vi starter med å lage en ny scene som skal være vår "main scene" som styrer hvilket brett man er på. På
-denne scenen legger vi til et script som skal styre logikken. Vi starter med å sette opp så denne scenen
-bare starter opp første brett. For å få dettep å plass på man først laste inn scenen via `preload`, 
-instansiere en instans av den og legge den til som en node på main-scenen vår.
+denne scenen legger vi til et script som skal styre logikken. Vi kan i starten sette opp så denne scenen
+bare starter opp første brett. For å få dette på plass på man først laste inn scenen via `preload`, 
+instansiere en instans av den og så legge den til som en node på main-scenen vår.
 
 ```
 const levels = [
@@ -74,6 +74,31 @@ for å koble funksjonen til eventet. F.eks. om "målet" er en node som heter "Go
 heter `level_completed` kan man bruke `level.get_node("GoalBalloon").level_completed.connect(on_level_completed)`.
 
 Sørg så for at denne funksjonen fjerner det gamle brettet via `queue_free` og instansierer neste brettet.
+
+
+### Legge til en transisjon mellom scenes
+
+Når vi bytter brett nå så hopper den rett over til ny scene. Vi kan gjøre dette litt penere ved å legge på
+en transisjonseffekt mellom scenebytte. For dette eksempelet vil vi ha en enkel "fade-out" og "fade-in", men
+gjerne være kreativ og lag annet. Man kan gjøre mye gøy via `AnimationPlayer` som vi vil bruke til dette.
+
+Legg til en `AnimationPlayer` og en `CanvasLayer`. Under `CanvasLayer` legger vi en `ColorRect` som skal
+være den svarte skjermen vi fader ut og inn. Sørg for at `ColorRect` er stor nok til å dekke hele skjermen.
+
+I `AnimationPlayer` legger vi til en ny animasjon og gir den et beskrivende navn, f.eks. `fade out`, og
+legger til en ny track hvor vi velger at den skal animere `CanvasLayer` sin `ColorRect`. Animeringen
+styres via at man legger til noen key-frames med verdier for animasjonen og så vil den via easing-funksjonen
+man velger la verdien gå mellom de ulike verdiene man har valgt. For fade ut kan man ha en key-frame på
+0 sekunder som er helt gjennomsiktig og en annen keyframe på f.eks. 1 sekund som er helt svart og ikke
+gjennomsiktig. La også en `fade in` lager man bare en animasjon som gjør det motsatte.
+
+![Bilde av animation player hvor man legger til tracks](./bilder/animation-add-track.png)
+
+Vi må nå endre koden slik at den i stede for å direkte bytte scene heller kjører animasjonen "fade out", så
+bytter scene til det neste brettet og så kjører "fade in" animasjonen. Du kan f.eks. bruke `animation_finished`
+signalet til å fange opp når en animasjon er ferdig. Et lite tips her er å huske på at signalet om at spilleren
+har nådd målet blir kalt på nytt hver update så lenge spilleren står ved målet. Så man må ta høyde for dette i koden
+så man ikke trigger overgangen til neste brett hele tiden.
 
 Etter dette er du egentlig ferdig med hoveddelen av workshopen og kan gå videre til å leke deg litt med 
 [videre oppgaver](./08-videre-oppgaver.md).
