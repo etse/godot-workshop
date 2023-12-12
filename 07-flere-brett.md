@@ -34,7 +34,7 @@ man ser at man får et tekstfelt hvor man kan skrive inn hvilken level den skal 
 bruke `@export_file` som lar deg velge en fil.
 
 
-## Main scene som styrer hvulket brett spilles
+## Main scene som styrer hvilket brett spilles
 
 Når man etterhvert får mange brett, og kanskje legger til flere ulike sener for ting som ulike menyen og "game over"
 kan dette for bli uoversiktlig. Et vanlig pattern er derfor å i stede for å la brettene selv bytte til neste sene
