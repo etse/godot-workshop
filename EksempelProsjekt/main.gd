@@ -2,7 +2,8 @@ extends Node2D
 
 const levels = [
 	preload("res://world.tscn"),
-	preload("res://world2.tscn")
+	preload("res://world2.tscn"),
+	preload("res://world3.tscn")
 ]
 
 var canSwitchLevels = true
