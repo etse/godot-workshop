@@ -29,7 +29,7 @@ den til en størrelse du liker kan du plassere den på grei plass. Husk at du ø
 Om du starter spillet nå vil du se at mynten er der du plasserte den, men den er ikke animert.
 Dette er fordi vi ikke har sagt at vi ønsker å starte noen animasjon - for å få til dette må vi
 legge til et script på selve mynten (via attach script) og i `_ready` funksjonen legge til
-kode som starter selve animasjonen.
+kode som starter selve animasjonen. (Tips: Vi kan spille av en animasjon ved å bruke `$AnimatedSprite2D.play()`)
 
 Nå har vi en mynt som spinner, men vi kan ikke plukke den opp siden vi ikke har en collision-boks
 på den. Vi må altså legge til en `CollisionShape2D` og gi den en shape som passer med selve mynten.
