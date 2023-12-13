@@ -47,7 +47,6 @@ func handle_jump():
 			velocity.y = JUMP_VELOCITY
 			$AudioStreamPlayer.play()
 		elif is_on_wall():
-			print("WALL JUMP")
 			$AudioStreamPlayer.play()
 			var direction = Input.get_axis("ui_left", "ui_right")
 			velocity.y = JUMP_VELOCITY
