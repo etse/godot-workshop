@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://c4moeh4jgndw3"]
 
 [ext_resource type="Script" path="res://components/Coin.gd" id="1_p0dmv"]
-[ext_resource type="Texture2D" uid="uid://ceytwgx8jwehw" path="res://assets/gold_coin_sprite_sheet.png" id="2_exsr2"]
-[ext_resource type="AudioStream" uid="uid://bq2ctl7mngnua" path="res://assets/sounds/coin.mp3" id="3_maoxl"]
+[ext_resource type="Texture2D" uid="uid://d0f83t7u860uf" path="res://assets/gold_coin_sprite_sheet.png" id="2_exsr2"]
+[ext_resource type="AudioStream" uid="uid://d6rawc81cui2" path="res://assets/sounds/coin.mp3" id="3_maoxl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktt6k"]
 atlas = ExtResource("2_exsr2")
@@ -65,6 +65,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6doxt")
+frame_progress = 0.82574
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_easv2")
